@@ -2,14 +2,14 @@
 
 check_factor()
 {
-	if [$# -ne 3];
+	if [ $# -ne 3 ];
 	then
-		args= ("$@")
+		args=("$@")
 		count=0
 		num2=1
-		for a in $ {args [*]};
+		for a in ${args[*]};
 		do
-			if [$count -gt 1];
+			if [ $count -gt 1 ];
 			then
 				num2=$(echo $a*$num2 | bc)
 			fi
@@ -34,7 +34,7 @@ check_factor()
 
 if [ $# -ne 1 ]
 then
-	echo 'Usage: factors <file>'
+	echo 'Usage: rsa <file>'
 	exit 1
 else
 
